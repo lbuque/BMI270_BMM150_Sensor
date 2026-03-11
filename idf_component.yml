@@ -4,8 +4,7 @@ dependencies:
     public: true
     version: '*'
   idf: '>=5.3'
-description: BMI270 sensor component with Circle Gesture Detection and Toy Motion
-  Detection support.
+description: BMI270_BMM150 Sensor Component for ESP-IDF
 issues: https://github.com/lbuque/BMI270_BMM150_Sensor/issues
 url: https://github.com/lbuque/BMI270_BMM150_Sensor
-version: 0.1.0
+version: 0.1.1

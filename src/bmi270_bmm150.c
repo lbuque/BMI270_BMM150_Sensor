@@ -1,6 +1,12 @@
+/*
+ * SPDX-FileCopyrightText: Copyright (c) 2026 lbuque <1102390310@qq.com>
+ *
+ * SPDX-License-Identifier: MIT
+ */
 #include "bmi270_bmm150.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "esp_log.h"
 #include "esp_timer.h"
 
 static const char *TAG = "BMI270_BMM150";
