@@ -1,0 +1,11 @@
+dependencies:
+  cmake_utilities: 0.*
+  i2c_bus:
+    public: true
+    version: '*'
+  idf: '>=5.3'
+description: BMI270 sensor component with Circle Gesture Detection and Toy Motion
+  Detection support.
+issues: https://github.com/lbuque/BMI270_BMM150_Sensor/issues
+url: https://github.com/lbuque/BMI270_BMM150_Sensor
+version: 0.1.0
