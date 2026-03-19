@@ -17,22 +17,22 @@
 static const char *TAG = "BMI270_BMM150_DEMO";
 
 /* 常见 ESP32 开发板 I2C 引脚，可按你的硬件修改 */
-#define I2C_MASTER_SCL_IO    10
-#define I2C_MASTER_SDA_IO    8
+#define I2C_MASTER_SCL_IO    33
+#define I2C_MASTER_SDA_IO    32
 #define I2C_MASTER_PORT      I2C_NUM_0
 #define I2C_MASTER_FREQ_HZ   400000
 
 
-void app_main(void)
-{
-    i2c_config_t i2c_bus_conf = {
-        .mode = I2C_MODE_MASTER,
-        .sda_io_num = I2C_MASTER_SDA_IO,
-        .scl_io_num = I2C_MASTER_SCL_IO,
-        .sda_pullup_en = true,
-        .scl_pullup_en = true,
-        .master.clk_speed = I2C_MASTER_FREQ_HZ,
-    };
+/* Inside .cpp file, app_main function must be declared with C linkage */
+extern "C" void app_main(void) {
+    i2c_config_t i2c_bus_conf;
+    memset(&i2c_bus_conf, 0, sizeof(i2c_bus_conf));
+    i2c_bus_conf.mode = I2C_MODE_MASTER;
+    i2c_bus_conf.sda_io_num = I2C_MASTER_SDA_IO;
+    i2c_bus_conf.scl_io_num = I2C_MASTER_SCL_IO;
+    i2c_bus_conf.sda_pullup_en = true;
+    i2c_bus_conf.scl_pullup_en = true;
+    i2c_bus_conf.master.clk_speed = I2C_MASTER_FREQ_HZ;
 
     i2c_bus_handle_t i2c_bus = i2c_bus_create(I2C_MASTER_PORT, &i2c_bus_conf);
     if (i2c_bus == NULL) {

@@ -299,7 +299,7 @@ esp_err_t bmi270_bmm150_sensor_create(i2c_bus_handle_t i2c_handle, bmi270_bmm150
         return ESP_ERR_INVALID_ARG;
     }
 
-    bmi270_bmm150_handle_t handle = calloc(1, sizeof(struct bmi270_bmm150_handle_t));
+    bmi270_bmm150_handle_t handle = calloc(1, sizeof(struct _bmi270_bmm150_handle_t));
     if (handle == NULL) {
         return ESP_ERR_NO_MEM;
     }

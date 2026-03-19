@@ -43,7 +43,7 @@ struct dev_info {
 /**
  * @brief BMI270_BMM150 sensor handle structure
  */
-struct bmi270_bmm150_handle_t {
+struct _bmi270_bmm150_handle_t {
     struct dev_info accel_gyro_dev_info; /*!< Accelerometer and gyroscope device information */
     struct dev_info mag_dev_info;        /*!< Magnetometer device information */
     struct bmi2_dev bmi2;                /*!< BMI2 device structure */
@@ -51,7 +51,7 @@ struct bmi270_bmm150_handle_t {
     uint16_t int_status;                 /*!< Interrupt status */
 };
 
-typedef struct bmi270_bmm150_handle_t *bmi270_bmm150_handle_t;
+typedef struct _bmi270_bmm150_handle_t *bmi270_bmm150_handle_t;
 
 /**
  * @brief Create and initialize the BMI270_BMM150 sensor.
